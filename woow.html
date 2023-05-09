@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Text on Web Page with Vercel</title>
+</head>
+<body>
+    <div id="text"></div>
+    <script>
+        fetch(`/${process.env.code.txt}`)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('text').innerHTML = data;
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+</html>
